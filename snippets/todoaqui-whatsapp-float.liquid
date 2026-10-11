@@ -1,0 +1,18 @@
+{% doc %}
+  Botón flotante de WhatsApp en todas las páginas.
+  Se activa o desactiva en Configuración del tema › Todo Aquí.
+{% enddoc %}
+{%- if settings.todoaqui_whatsapp_float -%}
+  {%- capture ta_float_url -%}
+    {%- render 'todoaqui-whatsapp-url', message: settings.todoaqui_whatsapp_float_message -%}
+  {%- endcapture -%}
+  <a
+    class="ta-wa-float{% if template.name == 'product' %} ta-wa-float--raised{% endif %}"
+    href="{{ ta_float_url | strip }}"
+    target="_blank"
+    rel="noopener"
+    aria-label="Escríbenos por WhatsApp"
+  >
+    {%- render 'todoaqui-icon', name: 'whatsapp' -%}
+  </a>
+{%- endif -%}

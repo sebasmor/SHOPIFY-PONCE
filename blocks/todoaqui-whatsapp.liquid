@@ -1,0 +1,41 @@
+{%- comment -%}
+  Botón "Pedir por WhatsApp" para la página de producto.
+  Envía un mensaje con el nombre del producto, su precio (si no tiene variantes) y el enlace.
+{%- endcomment -%}
+{%- liquid
+  assign ta_product = closest.product
+  assign ta_variant = ta_product.selected_or_first_available_variant
+-%}
+{%- capture ta_msg -%}
+  {{- block.settings.message }} {{ ta_product.title -}}
+  {%- if ta_product.has_only_default_variant %} ({{ ta_variant.price | money_without_trailing_zeros | strip_html }}){% endif -%}
+  {%- if ta_product.url != blank %} {{ shop.url }}{{ ta_product.url }}{% endif -%}
+{%- endcapture -%}
+{%- capture ta_url -%}
+  {%- render 'todoaqui-whatsapp-url', message: ta_msg -%}
+{%- endcapture -%}
+<a
+  class="ta-wa-btn"
+  href="{{ ta_url | strip }}"
+  target="_blank"
+  rel="noopener"
+  {{ block.shopify_attributes }}
+>
+  {%- render 'todoaqui-icon', name: 'whatsapp' -%}
+  {{- block.settings.label -}}
+</a>
+
+{% schema %}
+{
+  "name": "Pedir por WhatsApp",
+  "tag": null,
+  "settings": [
+    { "type": "text", "id": "label", "label": "Texto del botón", "default": "Pedir por WhatsApp" },
+    {
+      "type": "text", "id": "message", "label": "Inicio del mensaje", "default": "Hola, quiero pedir:",
+      "info": "Después de este texto se agregan el nombre del producto, el precio y el enlace."
+    }
+  ],
+  "presets": [{ "name": "Pedir por WhatsApp" }]
+}
+{% endschema %}

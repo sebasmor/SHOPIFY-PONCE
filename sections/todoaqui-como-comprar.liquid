@@ -1,0 +1,65 @@
+{%- comment -%}
+  Cómo comprar en 3 pasos y el recuadro "¿No lo encuentras?" con WhatsApp.
+{%- endcomment -%}
+<div class="section section--page-width" style="padding-block: {{ section.settings.padding_top }}px {{ section.settings.padding_bottom }}px;">
+  <div class="ta-section-head">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+  <div class="ta-how">
+    <div class="ta-step">
+      <span class="ta-step__num">1</span>
+      <p class="ta-step__title">{{ section.settings.step1_title }}</p>
+      <p class="ta-step__text">{{ section.settings.step1_text }}</p>
+    </div>
+    <div class="ta-step">
+      <span class="ta-step__num">2</span>
+      <p class="ta-step__title">{{ section.settings.step2_title }}</p>
+      <p class="ta-step__text">{{ section.settings.step2_text }}</p>
+    </div>
+    <div class="ta-step">
+      <span class="ta-step__num">3</span>
+      <p class="ta-step__title">{{ section.settings.step3_title }}</p>
+      <p class="ta-step__text">{{ section.settings.step3_text }}</p>
+    </div>
+    {%- capture ta_ask_url -%}
+      {%- render 'todoaqui-whatsapp-url', message: section.settings.ask_message -%}
+    {%- endcapture -%}
+    <div class="ta-ask">
+      <p class="ta-ask__title">{{ section.settings.ask_title }}</p>
+      <p class="ta-ask__text">{{ section.settings.ask_text }}</p>
+      <a class="ta-btn ta-btn--whatsapp" href="{{ ta_ask_url | strip }}" target="_blank" rel="noopener">
+        {%- render 'todoaqui-icon', name: 'whatsapp' -%}
+        {{- section.settings.ask_button -}}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cómo comprar Todo Aquí",
+  "tag": "section",
+  "class": "ta-section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título", "default": "Comprar es fácil" },
+    { "type": "header", "content": "Paso 1" },
+    { "type": "text", "id": "step1_title", "label": "Título", "default": "Elige" },
+    { "type": "text", "id": "step1_text", "label": "Texto", "default": "Busca tu producto o navega por departamentos." },
+    { "type": "header", "content": "Paso 2" },
+    { "type": "text", "id": "step2_title", "label": "Título", "default": "Confirma" },
+    { "type": "text", "id": "step2_text", "label": "Texto", "default": "Te escribimos por WhatsApp para coordinar la entrega." },
+    { "type": "header", "content": "Paso 3" },
+    { "type": "text", "id": "step3_title", "label": "Título", "default": "Recibe y paga" },
+    { "type": "text", "id": "step3_text", "label": "Texto", "default": "Te lo llevamos a tu casa. Pagas al recibir." },
+    { "type": "header", "content": "Recuadro de WhatsApp" },
+    { "type": "text", "id": "ask_title", "label": "Título", "default": "¿No lo encuentras?" },
+    { "type": "text", "id": "ask_text", "label": "Texto", "default": "Escríbenos y te lo conseguimos." },
+    { "type": "text", "id": "ask_button", "label": "Texto del botón", "default": "Pídelo por WhatsApp" },
+    { "type": "text", "id": "ask_message", "label": "Mensaje de WhatsApp", "default": "Hola, estoy buscando un producto que no encuentro en la tienda:" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_top", "label": "Arriba", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 32 },
+    { "type": "range", "id": "padding_bottom", "label": "Abajo", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 48 }
+  ],
+  "presets": [{ "name": "Cómo comprar Todo Aquí" }]
+}
+{% endschema %}

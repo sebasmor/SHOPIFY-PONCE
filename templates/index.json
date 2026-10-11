@@ -8,88 +8,53 @@
  * ------------------------------------------------------------
  */{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
-      "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
-      ],
-      "name": "t:names.hero",
+    "todoaqui_hero": {
+      "type": "todoaqui-hero",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "eyebrow": "Gran apertura",
+        "heading": "Todo lo que buscas, sin salir de Ponce.",
+        "text": "Te lo llevamos a tu casa y pagas cuando lo tienes en tus manos.",
+        "button_label": "Ver productos",
+        "button_link": "shopify://collections/all",
+        "show_whatsapp_button": true,
+        "whatsapp_label": "Pídelo por WhatsApp",
+        "whatsapp_message": "Hola, quiero hacer un pedido en Todo Aquí.",
+        "promo1_title": "Ferretería en oferta",
+        "promo1_text": "Herramientas, linternas y más",
+        "promo1_icon": "tool",
+        "promo2_title": "Cocina para tu casa",
+        "promo2_text": "Ollas, licuadoras y más",
+        "promo2_icon": "pot",
+        "padding_top": 20,
+        "padding_bottom": 12
       }
+    },
+    "todoaqui_beneficios": {
+      "type": "todoaqui-beneficios",
+      "blocks": {
+        "beneficio_entrega": { "type": "beneficio", "settings": { "text": "Llega mañana en Ponce", "icon": "truck" } },
+        "beneficio_pago": { "type": "beneficio", "settings": { "text": "Pagas al recibir", "icon": "cash" } },
+        "beneficio_garantia": { "type": "beneficio", "settings": { "text": "Garantía y cambios", "icon": "shield" } },
+        "beneficio_whatsapp": { "type": "beneficio", "settings": { "text": "Te atendemos por WhatsApp", "icon": "whatsapp" } }
+      },
+      "block_order": ["beneficio_entrega", "beneficio_pago", "beneficio_garantia", "beneficio_whatsapp"],
+      "settings": { "padding_top": 0, "padding_bottom": 16 }
+    },
+    "todoaqui_departamentos": {
+      "type": "todoaqui-departamentos",
+      "blocks": {
+        "dep_ferreteria": { "type": "departamento", "settings": { "title": "Ferretería", "handle": "ferreteria", "icon": "hammer" } },
+        "dep_herramientas": { "type": "departamento", "settings": { "title": "Herramientas", "handle": "herramientas", "icon": "tool" } },
+        "dep_trabajo": { "type": "departamento", "settings": { "title": "Trabajo y seguridad", "handle": "trabajo-seguridad", "icon": "helmet" } },
+        "dep_hogar": { "type": "departamento", "settings": { "title": "Hogar y cocina", "handle": "hogar-cocina", "icon": "pot" } },
+        "dep_tecnologia": { "type": "departamento", "settings": { "title": "Tecnología", "handle": "tecnologia", "icon": "headphones" } },
+        "dep_celulares": { "type": "departamento", "settings": { "title": "Celulares", "handle": "celulares", "icon": "phone" } },
+        "dep_belleza": { "type": "departamento", "settings": { "title": "Belleza", "handle": "belleza", "icon": "beauty" } },
+        "dep_ninos": { "type": "departamento", "settings": { "title": "Niños y escolar", "handle": "ninos-escolar", "icon": "toy" } },
+        "dep_regalos": { "type": "departamento", "settings": { "title": "Regalos", "handle": "regalos", "icon": "gift" } }
+      },
+      "block_order": ["dep_ferreteria", "dep_herramientas", "dep_trabajo", "dep_hogar", "dep_tecnologia", "dep_celulares", "dep_belleza", "dep_ninos", "dep_regalos"],
+      "settings": { "heading": "Compra por departamento", "link_label": "Ver todos", "padding_top": 24, "padding_bottom": 8 }
     },
     "product_list_fa6P9H": {
       "type": "product-list",
@@ -130,7 +95,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h3>Más vendidos en Ponce Enríquez</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -154,7 +119,7 @@
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
               "settings": {
-                "label": "View all",
+                "label": "Ver todo",
                 "open_in_new_tab": false,
                 "style_class": "link",
                 "width": "fit-content",
@@ -273,13 +238,24 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 24,
+        "padding-block-end": 16
+      }
+    },
+    "todoaqui_como_comprar": {
+      "type": "todoaqui-como-comprar",
+      "settings": {
+        "heading": "Comprar es fácil",
+        "padding_top": 32,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "todoaqui_hero",
+    "todoaqui_beneficios",
+    "todoaqui_departamentos",
+    "product_list_fa6P9H",
+    "todoaqui_como_comprar"
   ]
 }

@@ -1,0 +1,54 @@
+{%- comment -%}
+  Fila de beneficios: entrega, pago al recibir, garantía y WhatsApp.
+{%- endcomment -%}
+<div class="section section--page-width" style="padding-block: {{ section.settings.padding_top }}px {{ section.settings.padding_bottom }}px;">
+  <div class="ta-perks">
+    {%- for block in section.blocks -%}
+      <div class="ta-perk" {{ block.shopify_attributes }}>
+        {%- render 'todoaqui-icon', name: block.settings.icon -%}
+        <span>{{ block.settings.text }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Beneficios Todo Aquí",
+  "tag": "section",
+  "class": "ta-section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "range", "id": "padding_top", "label": "Espacio arriba", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 8 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio abajo", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 24 }
+  ],
+  "blocks": [
+    {
+      "type": "beneficio",
+      "name": "Beneficio",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texto", "default": "Pagas al recibir" },
+        {
+          "type": "select", "id": "icon", "label": "Ícono", "default": "cash",
+          "options": [
+            { "value": "truck", "label": "Camión de entrega" }, { "value": "cash", "label": "Dinero" },
+            { "value": "shield", "label": "Garantía" }, { "value": "whatsapp", "label": "WhatsApp" },
+            { "value": "tag", "label": "Etiqueta de oferta" }, { "value": "bag", "label": "Bolsa de compras" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Beneficios Todo Aquí",
+      "blocks": [
+        { "type": "beneficio", "settings": { "text": "Llega mañana en Ponce", "icon": "truck" } },
+        { "type": "beneficio", "settings": { "text": "Pagas al recibir", "icon": "cash" } },
+        { "type": "beneficio", "settings": { "text": "Garantía y cambios", "icon": "shield" } },
+        { "type": "beneficio", "settings": { "text": "Te atendemos por WhatsApp", "icon": "whatsapp" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

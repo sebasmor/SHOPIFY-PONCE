@@ -1,0 +1,438 @@
+{% doc %}
+  Estilos compartidos de las secciones y bloques de Todo Aquí.
+  Colores de marca: verde montaña #0E4D3A, verde confianza #1B7F5C,
+  amarillo oferta #F2B33D, gris suave #F1F4F2, tinta #1F2A26.
+{% enddoc %}
+
+{% stylesheet %}
+  .ta-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+
+  /* ---------- Botones ---------- */
+  .ta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: filter 0.15s ease;
+  }
+  .ta-btn:hover {
+    filter: brightness(0.95);
+  }
+  .ta-btn--yellow {
+    background: #f2b33d;
+    color: #1f2a26;
+  }
+  .ta-btn--ghost {
+    border: 1.5px solid rgb(255 255 255 / 0.7);
+    color: #ffffff;
+  }
+  .ta-btn--whatsapp {
+    background: #ffffff;
+    color: #1e8a4f;
+  }
+
+  /* ---------- Hero ---------- */
+  .ta-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .ta-hero__main {
+    background: #0e4d3a;
+    color: #ffffff;
+    border-radius: 18px;
+    padding: clamp(24px, 4vw, 48px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ta-hero__main::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: -80px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.06);
+    pointer-events: none;
+  }
+  .ta-hero__copy {
+    display: grid;
+    gap: 14px;
+    justify-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .ta-hero__eyebrow {
+    background: #f2b33d;
+    color: #1f2a26;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .ta-hero .ta-hero__title {
+    color: #ffffff;
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    max-width: 16ch;
+    text-wrap: balance;
+  }
+  .ta-hero__text {
+    color: rgb(255 255 255 / 0.88);
+    font-size: 1rem;
+    max-width: 44ch;
+    margin: 0;
+  }
+  .ta-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .ta-hero__image {
+    width: clamp(160px, 22vw, 280px);
+    position: relative;
+    z-index: 1;
+  }
+  .ta-hero__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+  }
+  .ta-hero__side {
+    display: grid;
+    gap: 12px;
+  }
+  .ta-promo {
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    text-decoration: none;
+    color: #1f2a26;
+    min-height: 140px;
+  }
+  .ta-promo--yellow {
+    background: #f2b33d;
+  }
+  .ta-promo--light {
+    background: #f1f4f2;
+  }
+  .ta-promo__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 4px;
+  }
+  .ta-promo__text {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .ta-promo .ta-icon {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.3;
+    color: #0e4d3a;
+  }
+  @media screen and (max-width: 749px) {
+    .ta-hero,
+    .ta-hero__main {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .ta-hero__image {
+      display: none;
+    }
+    .ta-hero__side {
+      grid-template-columns: 1fr 1fr;
+    }
+    .ta-promo {
+      min-height: 0;
+      padding: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .ta-promo .ta-icon {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  /* ---------- Beneficios ---------- */
+  .ta-perks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .ta-perk {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f1f4f2;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: #1f2a26;
+  }
+  .ta-perk .ta-icon {
+    color: #1b7f5c;
+    width: 26px;
+    height: 26px;
+  }
+  @media screen and (max-width: 749px) {
+    .ta-perks {
+      grid-template-columns: 1fr 1fr;
+    }
+    .ta-perk {
+      font-size: 0.82rem;
+      padding: 12px;
+      gap: 8px;
+    }
+  }
+
+  /* ---------- Departamentos ---------- */
+  .ta-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .ta-section-head h2 {
+    margin: 0;
+    font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .ta-section-head a {
+    color: #1b7f5c;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+  .ta-deps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    gap: 10px;
+  }
+  .ta-dep {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #1f2a26;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.25;
+    padding: 14px 8px;
+    border-radius: 14px;
+    border: 1px solid #dde4e0;
+    background: #ffffff;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .ta-dep:hover {
+    border-color: #1b7f5c;
+    transform: translateY(-2px);
+  }
+  .ta-dep__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #f1f4f2;
+    color: #1b7f5c;
+    display: grid;
+    place-items: center;
+  }
+  .ta-dep__icon .ta-icon {
+    width: 26px;
+    height: 26px;
+  }
+  @media screen and (max-width: 749px) {
+    .ta-deps {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .ta-dep {
+      font-size: 0.78rem;
+      padding: 12px 4px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ta-dep {
+      transition: none;
+    }
+    .ta-dep:hover {
+      transform: none;
+    }
+  }
+
+  /* ---------- Cómo comprar ---------- */
+  .ta-how {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.3fr);
+    gap: 12px;
+  }
+  .ta-step {
+    background: #f1f4f2;
+    border-radius: 16px;
+    padding: 20px;
+    display: grid;
+    gap: 6px;
+    align-content: start;
+    color: #1f2a26;
+  }
+  .ta-step__num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #1b7f5c;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .ta-step__title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .ta-step__text {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #4a5752;
+  }
+  .ta-ask {
+    background: #1b7f5c;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    display: grid;
+    gap: 10px;
+    align-content: center;
+    justify-items: start;
+  }
+  .ta-ask__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+    color: #ffffff;
+  }
+  .ta-ask__text {
+    margin: 0;
+    color: rgb(255 255 255 / 0.9);
+  }
+  @media screen and (max-width: 989px) {
+    .ta-how {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .ta-ask {
+      grid-column: 1 / -1;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .ta-how {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  /* ---------- Producto: WhatsApp y confianza ---------- */
+  .ta-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    align-self: stretch;
+    min-height: 48px;
+    padding: 10px 16px;
+    border: 2px solid #25a55f;
+    border-radius: 10px;
+    color: #1e8a4f;
+    background: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .ta-wa-btn:hover {
+    background: #eef8f2;
+  }
+  .ta-trust {
+    width: 100%;
+    align-self: stretch;
+    background: #f1f4f2;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: grid;
+    gap: 10px;
+    color: #1f2a26;
+  }
+  .ta-trust__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+  }
+  .ta-trust__row .ta-icon {
+    color: #1b7f5c;
+  }
+
+  /* ---------- Botón flotante ---------- */
+  .ta-wa-float {
+    position: fixed;
+    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25a55f;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.22);
+    transition: transform 0.15s ease;
+  }
+  .ta-wa-float:hover {
+    transform: scale(1.06);
+  }
+  .ta-wa-float .ta-icon {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.8;
+  }
+  .ta-wa-float--raised {
+    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ta-wa-float {
+      transition: none;
+    }
+  }
+{% endstylesheet %}

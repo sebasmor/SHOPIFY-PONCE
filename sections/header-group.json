@@ -17,11 +17,13 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Llega mañana en Ponce Enríquez · Pagas al recibir",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
+            "weight": "600",
             "letter_spacing": "normal",
-            "case": "none"
+            "case": "none",
+            "text_color": "#FFFFFF"
           },
           "blocks": {}
         }
@@ -33,11 +35,11 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
-        "divider_width": 1,
+        "background_color": "#1B7F5C",
+        "divider_width": 0,
         "divider_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 8,
+        "padding-block-end": 8
       }
     },
     "header_section": {
@@ -81,9 +83,9 @@
         "show_search": true,
         "search_position": "right",
         "search_row": "top",
-        "show_country": true,
+        "show_country": false,
         "country_selector_style": false,
-        "show_language": true,
+        "show_language": false,
         "localization_font": "heading",
         "localization_font_size": "0.875rem",
         "localization_position": "right",
@@ -94,7 +96,11 @@
         "divider_width": 0,
         "divider_size": "page-width",
         "border_width": 0,
-        "background_color_top": "{{ settings.color_palette.background }}",
+        "background_color_top": "#0E4D3A",
+        "text_color_top": "#FFFFFF",
+        "bubble_style": "custom",
+        "bubble_background_color": "#F2B33D",
+        "bubble_text_color": "#1F2A26",
         "enable_transparent_header_home": false,
         "enable_transparent_header_product": false,
         "enable_transparent_header_collection": false

@@ -1,0 +1,14 @@
+{% doc %}
+  Devuelve el enlace de WhatsApp de la tienda con un mensaje ya escrito.
+  El número se configura en Configuración del tema › Todo Aquí.
+
+  @param {string} message - texto que aparecerá escrito en el chat
+{% enddoc %}
+{%- liquid
+  assign ta_number = settings.todoaqui_whatsapp | default: '593990144588' | remove: ' ' | remove: '+' | remove: '-'
+  assign ta_first = ta_number | slice: 0
+  if ta_first == '0'
+    assign ta_number = ta_number | remove_first: '0' | prepend: '593'
+  endif
+-%}
+https://wa.me/{{ ta_number }}?text={{ message | url_encode }}

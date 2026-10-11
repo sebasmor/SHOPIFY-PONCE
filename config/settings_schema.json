@@ -2116,5 +2116,33 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "Todo Aquí",
+    "settings": [
+      {
+        "type": "header",
+        "content": "WhatsApp"
+      },
+      {
+        "type": "text",
+        "id": "todoaqui_whatsapp",
+        "label": "Número de WhatsApp",
+        "info": "Con código de país 593 y sin el 0 inicial. Ej.: 593990144588",
+        "default": "593990144588"
+      },
+      {
+        "type": "checkbox",
+        "id": "todoaqui_whatsapp_float",
+        "label": "Mostrar botón flotante de WhatsApp",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "todoaqui_whatsapp_float_message",
+        "label": "Mensaje del botón flotante",
+        "default": "Hola, tengo una consulta sobre un producto de Todo Aquí."
+      }
+    ]
   }
 ]

@@ -1,0 +1,27 @@
+{%- comment -%}
+  Recuadro de confianza bajo el botón de compra: pago al recibir, entrega y garantía.
+{%- endcomment -%}
+<div class="ta-trust" {{ block.shopify_attributes }}>
+  {%- if block.settings.line1 != blank -%}
+    <div class="ta-trust__row">{%- render 'todoaqui-icon', name: 'cash' -%}<span>{{ block.settings.line1 }}</span></div>
+  {%- endif -%}
+  {%- if block.settings.line2 != blank -%}
+    <div class="ta-trust__row">{%- render 'todoaqui-icon', name: 'truck' -%}<span>{{ block.settings.line2 }}</span></div>
+  {%- endif -%}
+  {%- if block.settings.line3 != blank -%}
+    <div class="ta-trust__row">{%- render 'todoaqui-icon', name: 'shield' -%}<span>{{ block.settings.line3 }}</span></div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Confianza Todo Aquí",
+  "tag": null,
+  "settings": [
+    { "type": "text", "id": "line1", "label": "Pago", "default": "Pagas al recibir" },
+    { "type": "text", "id": "line2", "label": "Entrega", "default": "Llega mañana a tu casa en Ponce Enríquez" },
+    { "type": "text", "id": "line3", "label": "Garantía", "default": "Garantía de 3 meses y cambios fáciles" }
+  ],
+  "presets": [{ "name": "Confianza Todo Aquí" }]
+}
+{% endschema %}

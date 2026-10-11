@@ -15,7 +15,7 @@
           "type": "disclosures",
           "name": "t:names.disclosures",
           "settings": {
-            "heading": "Disclosures",
+            "heading": "Preguntas frecuentes",
             "heading_preset": "h5",
             "open_by_default": false,
             "icon": "caret",
@@ -298,6 +298,23 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "todoaqui_whatsapp": {
+              "type": "todoaqui-whatsapp",
+              "settings": {
+                "label": "Pedir por WhatsApp",
+                "message": "Hola, quiero pedir:"
+              },
+              "blocks": {}
+            },
+            "todoaqui_confianza": {
+              "type": "todoaqui-confianza",
+              "settings": {
+                "line1": "Pagas al recibir",
+                "line2": "Llega mañana a tu casa en Ponce Enríquez",
+                "line3": "Garantía de 3 meses y cambios fáciles"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -305,6 +322,8 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "todoaqui_whatsapp",
+            "todoaqui_confianza",
             "text_aEtTtq"
           ]
         }
@@ -331,7 +350,7 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h3>You may also like </h3>",
+            "text": "<h3>También te puede interesar</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
